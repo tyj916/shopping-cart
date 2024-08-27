@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Product from "./Product";
+import ProductCard from "./ProductCard";
 
 function Shop() {
   const [products, setProducts] = useState(null);
@@ -15,6 +15,7 @@ function Shop() {
         }
         const productsData = await response.json();
         setProducts(productsData);
+        console.log(productsData);
       } catch(err) {
         setError(err.message);
         setProducts(null);
@@ -36,13 +37,14 @@ function Shop() {
           products && products.length === 0 ? <p>No product.</p> :
           products && products.map(product => {
             return (
-              <Product 
+              <ProductCard 
                 key={product.id}
                 title={product.title}
                 price={product.price}
                 category={product.category}
                 description={product.description}
                 imageURL={product.image}
+                rating={product.rating}
               />
             )
           })
