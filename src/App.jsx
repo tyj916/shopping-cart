@@ -1,22 +1,16 @@
-import 'normalize.css'
 import './App.css'
-import { useState } from 'react'
+import NavigationBar from './components/NavigationBar';
+import { Outlet } from 'react-router-dom';
 
 function App() {
-  const [heading, setHeading] = useState("Hello World!");
-
-  function clickHanlder() {
-    setHeading('Success!');
-  }
 
   return (
     <>
-      <div>
-        <h1>{heading}</h1>
-      </div>
-      <button type='button' onClick={clickHanlder}>
-        Test Button
-      </button>
+      <header>
+        <div className='logo'>Project Logo</div>
+        <NavigationBar />
+      </header>
+      <Outlet />
     </>
   )
 }
