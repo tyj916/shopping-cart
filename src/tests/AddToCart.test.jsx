@@ -17,16 +17,16 @@ describe('Add to cart component', () => {
 
     await user.click(button);
 
-    expect(+screen.getByLabelText('count').value).toBe(2);
+    expect(+screen.getByLabelText('quantity').value).toBe(2);
   });
 
-  it('should minus 1 count after minus button is clicked', async () => {
+  it('should minus 1 quantity after minus button is clicked', async () => {
     const user = userEvent.setup();
 
     render(<AddToCart />);
     const addButton = screen.getByRole('button', { name: '+' });
     const minusButton = screen.getByRole('button', { name: '-' });
-    const input = screen.getByLabelText('count');
+    const input = screen.getByLabelText('quantity');
 
     await user.click(addButton);
     await user.click(minusButton);
@@ -39,7 +39,7 @@ describe('Add to cart component', () => {
 
     render(<AddToCart />);
     const minusButton = screen.getByRole('button', { name: '-' });
-    const input = screen.getByLabelText('count');
+    const input = screen.getByLabelText('quantity');
 
     await user.click(minusButton);
 

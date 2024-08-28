@@ -8,7 +8,8 @@ function ProductCard({
   title, 
   price, 
   image,
-  rating
+  rating,
+  addItemToCart
 }) {
   return (
     <li className='product-card'>
@@ -19,7 +20,13 @@ function ProductCard({
       
       <p>${price}</p>
       <p>Rating: {rating.rate}</p>
-      <AddToCart />
+      <AddToCart
+        productId={id}
+        title={title}
+        price={price}
+        imageURL={image}
+        addItemToCart={addItemToCart}
+      />
     </li>
   )
 }
@@ -29,7 +36,8 @@ ProductCard.propTypes = {
   title: PropTypes.string,
   price: PropTypes.number,
   image: PropTypes.string,
-  rating: PropTypes.object
+  rating: PropTypes.object,
+  addItemToCart: PropTypes.func
 }
 
 export default ProductCard;

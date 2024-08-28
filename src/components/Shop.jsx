@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import { useOutletContext } from "react-router-dom";
 
 function Shop() {
   const [products, setProducts] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const addItemToCart = useOutletContext();
 
   useEffect(() => {
     const fetchProductsData = async () => {
@@ -39,6 +41,7 @@ function Shop() {
               <ProductCard 
                 key={product.id}
                 {...product}
+                addItemToCart={addItemToCart}
               />
             )
           })

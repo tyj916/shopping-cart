@@ -14,7 +14,7 @@ exports[`Add to cart component > renders add to cart button with number control 
         -
       </button>
       <input
-        aria-label="count"
+        aria-label="quantity"
         type="tel"
         value="1"
       />

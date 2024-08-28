@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-function NavigationBar() {
+function NavigationBar({length}) {
   return (
     <nav>
       <ul>
@@ -11,11 +12,15 @@ function NavigationBar() {
           <Link to='shop'>Shop</Link>
         </li>
         <li>
-          <button type="button">Cart</button>
+          <button type="button">Cart &#40;{length}&#41;</button>
         </li>
       </ul>
     </nav>
   );
+}
+
+NavigationBar.propTypes = {
+  length: PropTypes.number
 }
 
 export default NavigationBar;
