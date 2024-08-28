@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Add to cart component > renders add to cart button with number control 1`] = `
+<div>
+  <div
+    class="add-to-cart-controller"
+  >
+    <span
+      class="quantity-controller"
+    >
+      <button
+        type="button"
+      >
+        -
+      </button>
+      <input
+        aria-label="count"
+        type="tel"
+        value="1"
+      />
+      <button
+        type="button"
+      >
+        +
+      </button>
+    </span>
+    <button
+      type="button"
+    >
+      Add to cart
+    </button>
+  </div>
+</div>
+`;
