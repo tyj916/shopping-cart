@@ -13,6 +13,14 @@ function ProductCard({
       <h2>{title}</h2>
       <p>${price}</p>
       <p>Rating: {rating.rate}</p>
+      <div className='add-to-cart-controller'>
+        <span className='quantity-controller'>
+          <button type='button'>-</button>
+          <input type="tel" />
+          <button type='button'>+</button>
+        </span>
+        <button type='button'>Add to cart</button>
+      </div>
     </li>
   )
 }
