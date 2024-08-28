@@ -1,16 +1,21 @@
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ProductCard.css';
 
 function ProductCard({
+  id,
   title, 
   price, 
-  imageURL,
+  image,
   rating
 }) {
   return (
     <li className='product-card'>
-      <img src={imageURL} alt="" />
-      <h2>{title}</h2>
+      <Link to={'/product/' + id}>
+        <img src={image} alt="" />
+        <h2>{title}</h2>
+      </Link>
+      
       <p>${price}</p>
       <p>Rating: {rating.rate}</p>
       <div className='add-to-cart-controller'>
@@ -26,9 +31,10 @@ function ProductCard({
 }
 
 ProductCard.propTypes = {
+  id: PropTypes.number,
   title: PropTypes.string,
   price: PropTypes.number,
-  imageURL: PropTypes.string,
+  image: PropTypes.string,
   rating: PropTypes.object
 }
 

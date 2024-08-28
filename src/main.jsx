@@ -6,6 +6,7 @@ import 'normalize.css'
 import './index.css'
 import Home from './components/Home.jsx'
 import Shop from './components/Shop.jsx'
+import Product from './components/Product.jsx'
 
 const router = createBrowserRouter([
   {
@@ -14,8 +15,9 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'shop', element: <Shop /> },
+      { path: 'product/:name', element: <Product />}
     ],
-  },
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -15,7 +15,6 @@ function Shop() {
         }
         const productsData = await response.json();
         setProducts(productsData);
-        console.log(productsData);
       } catch(err) {
         setError(err.message);
         setProducts(null);
@@ -33,18 +32,13 @@ function Shop() {
       <ul className="products">
         {
           loading ? <p>Loading...</p> :
-          error ? <p>A network error was encountere</p> :
+          error ? <p>A network error was encountered</p> :
           products && products.length === 0 ? <p>No product.</p> :
           products && products.map(product => {
             return (
               <ProductCard 
                 key={product.id}
-                title={product.title}
-                price={product.price}
-                category={product.category}
-                description={product.description}
-                imageURL={product.image}
-                rating={product.rating}
+                {...product}
               />
             )
           })
