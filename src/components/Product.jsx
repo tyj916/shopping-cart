@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import AddToCart from "./AddToCart";
 
 function Product() {
   const { name } = useParams();
@@ -41,9 +42,10 @@ function Product() {
               <p>Rating: {productData.rating.rate} &#40;{productData.rating.count}&#41;</p>
               <p>{productData.description}</p>
               <p>${productData.price}</p>
+              <AddToCart />
             </div>
           </div>
-        ) : <p>Something went wrong. Product doesn&apos;exists.</p>
+        ) : <p>Something went wrong. Product doesn&apos;t exists.</p>
       }
     </>
   )

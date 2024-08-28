@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './ProductCard.css';
+import AddToCart from './AddToCart';
 
 function ProductCard({
   id,
@@ -18,14 +19,7 @@ function ProductCard({
       
       <p>${price}</p>
       <p>Rating: {rating.rate}</p>
-      <div className='add-to-cart-controller'>
-        <span className='quantity-controller'>
-          <button type='button'>-</button>
-          <input type="tel" />
-          <button type='button'>+</button>
-        </span>
-        <button type='button'>Add to cart</button>
-      </div>
+      <AddToCart />
     </li>
   )
 }
