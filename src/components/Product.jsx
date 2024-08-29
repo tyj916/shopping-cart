@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useOutletContext, useParams } from "react-router-dom";
 import AddToCart from "./AddToCart";
 
 function Product() {
@@ -8,6 +8,7 @@ function Product() {
   const [productData, setProductData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const addItemToCart = useOutletContext();
 
   useEffect(() => {
     const fetchProductData = async () => {
@@ -42,7 +43,13 @@ function Product() {
               <p>Rating: {productData.rating.rate} &#40;{productData.rating.count}&#41;</p>
               <p>{productData.description}</p>
               <p>${productData.price}</p>
-              <AddToCart />
+              <AddToCart 
+                productId={productData.id}
+                title={productData.title}
+                price={productData.price}
+                image={productData.image}
+                addItemToCart={addItemToCart}
+              />
             </div>
           </div>
         ) : <p>Something went wrong. Product doesn&apos;t exists.</p>
