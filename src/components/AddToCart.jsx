@@ -5,7 +5,7 @@ function AddToCart({
   productId,
   title,
   price,
-  imageURL,
+  image,
   addItemToCart,
 }) {
   const [quantity, setQuantity] = useState(1);
@@ -29,7 +29,7 @@ function AddToCart({
       id: productId,
       title,
       price,
-      imageURL,
+      image,
       quantity
     };
 
@@ -52,7 +52,7 @@ AddToCart.propTypes = {
   productId: PropTypes.number,
   title: PropTypes.string,
   price: PropTypes.number,
-  imageURL: PropTypes.string,
+  image: PropTypes.string,
   addItemToCart: PropTypes.func
 }
 

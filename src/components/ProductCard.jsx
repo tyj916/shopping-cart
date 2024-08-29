@@ -24,7 +24,7 @@ function ProductCard({
         productId={id}
         title={title}
         price={price}
-        imageURL={image}
+        image={image}
         addItemToCart={addItemToCart}
       />
     </li>
