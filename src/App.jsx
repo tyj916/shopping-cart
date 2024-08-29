@@ -44,6 +44,10 @@ function App() {
     );
   }
 
+  function clearCart() {
+    setCartItems([]);
+  }
+
   function toggleCart() {
     setOpenCart(!openCart);
   }
@@ -57,7 +61,7 @@ function App() {
           handleClick={toggleCart}
         />
       </header>
-      {openCart && <Cart items={cartItems} />}
+      {openCart && <Cart items={cartItems} handleClear={clearCart} />}
       <Outlet context={addItemToCart} />
     </>
   )
