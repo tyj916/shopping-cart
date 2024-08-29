@@ -6,6 +6,7 @@ import { Outlet } from 'react-router-dom';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [openCart, setOpenCart] = useState(false);
 
   function addItemToCart(newItem) {
     const newCartItems = [];
@@ -43,13 +44,20 @@ function App() {
     );
   }
 
+  function toggleCart() {
+    setOpenCart(!openCart);
+  }
+
   return (
     <>
       <header>
         <div className='logo'>Project Logo</div>
-        <NavigationBar length={getCartItemQuantity()} />
+        <NavigationBar 
+          length={getCartItemQuantity()} 
+          handleClick={toggleCart}
+        />
       </header>
-      <Cart items={cartItems} />
+      {openCart && <Cart items={cartItems} />}
       <Outlet context={addItemToCart} />
     </>
   )

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
-function NavigationBar({length}) {
+function NavigationBar({length, handleClick}) {
   return (
     <nav>
       <ul>
@@ -12,7 +12,7 @@ function NavigationBar({length}) {
           <Link to='shop'>Shop</Link>
         </li>
         <li>
-          <button type="button">Cart &#40;{length}&#41;</button>
+          <button type="button" onClick={handleClick}>Cart &#40;{length}&#41;</button>
         </li>
       </ul>
     </nav>
@@ -20,7 +20,8 @@ function NavigationBar({length}) {
 }
 
 NavigationBar.propTypes = {
-  length: PropTypes.number
+  length: PropTypes.number,
+  handleClick: PropTypes.func,
 }
 
 export default NavigationBar;
