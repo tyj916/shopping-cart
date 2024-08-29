@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import AddToCart from "../components/AddToCart";
 import userEvent from "@testing-library/user-event";
 
@@ -44,5 +44,17 @@ describe('Add to cart component', () => {
     await user.click(minusButton);
 
     expect(+input.value).toBe(1);
+  });
+
+  it('should call addItemToCart function when add to cart button is clicked', async () => {
+    const addItemToCart = vi.fn();
+    const user = userEvent.setup();
+    render(<AddToCart addItemToCart={addItemToCart}/>);
+
+    const button = screen.getByRole('button', { name: 'Add to cart' });
+
+    await user.click(button);
+
+    expect(addItemToCart).toHaveBeenCalled();
   });
 });
