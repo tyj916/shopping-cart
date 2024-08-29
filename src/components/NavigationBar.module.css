@@ -1,0 +1,22 @@
+.nav-horizontal {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cart-button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+}
+
+.cart-button:hover {
+  cursor: pointer;
+}
+
+.icon {
+  margin-right: 4px;
+}

@@ -1,0 +1,27 @@
+.add-to-cart button {
+  background: none;
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.add-to-cart button:hover {
+  background-color: black;
+  color: white;
+}
+
+.quantity-controller {
+  display: flex;
+}
+
+.quantity-controller button {
+  width: 3rem;
+}
+
+.quantity-controller input {
+  width: 100%;
+  text-align: center;
+}
+
+.add-to-cart-button {
+  width: 100%;
+}

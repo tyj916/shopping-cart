@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import './ProductCard.css';
+import styles from './ProductCard.module.css';
 import AddToCart from './AddToCart';
 
 function ProductCard({
@@ -12,14 +12,15 @@ function ProductCard({
   addItemToCart
 }) {
   return (
-    <li className='product-card'>
-      <Link to={'/product/' + id}>
-        <img src={image} alt="" />
-        <h2>{title}</h2>
+    <li className={styles.card}>
+      <Link to={'/product/' + id} className={styles.link}>
+        <div className={styles['product-details']}>
+          <img src={image} alt="" />
+          <h2 className={styles.title}>{title}</h2>
+          <p>Rating: {rating.rate}</p>
+          <p>${price}</p>
+        </div>
       </Link>
-      
-      <p>${price}</p>
-      <p>Rating: {rating.rate}</p>
       <AddToCart
         productId={id}
         title={title}

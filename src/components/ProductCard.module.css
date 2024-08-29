@@ -1,0 +1,26 @@
+.card {
+  padding: 16px;
+  border: 1px solid black;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  box-shadow: 0 0 4px 0px grey;
+}
+
+.link {
+  flex: 1;
+  text-decoration: none;
+  width: 100%;
+}
+
+.product-details img {
+  height: 180px;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 1rem;
+}

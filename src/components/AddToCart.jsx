@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from 'prop-types';
+import styles from './AddToCart.module.css';
 
 function AddToCart({
   productId,
@@ -37,13 +38,13 @@ function AddToCart({
   }
 
   return (
-    <div className='add-to-cart-controller'>
-      <span className='quantity-controller'>
+    <div className={styles['add-to-cart']}>
+      <div className={styles['quantity-controller']}>
         <button type='button' onClick={minusQuantity}>-</button>
         <input type="tel" aria-label='quantity' value={quantity} onChange={handleQuantityChange} />
         <button type='button' onClick={addQuantity}>+</button>
-      </span>
-      <button type='button' onClick={handleAddToCart}>Add to cart</button>
+      </div>
+      <button type='button' onClick={handleAddToCart} className={styles["add-to-cart-button"]}>Add to cart</button>
     </div>
   )
 }

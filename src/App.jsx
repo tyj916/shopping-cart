@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import './App.css'
 import Cart from './components/Cart';
 import NavigationBar from './components/NavigationBar';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
+import styles from './App.module.css';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -52,17 +52,25 @@ function App() {
     setOpenCart(!openCart);
   }
 
+  function closeCart() {
+    setOpenCart(false);
+  }
+
   return (
     <>
-      <header>
-        <div className='logo'>Project Logo</div>
-        <NavigationBar 
-          length={getCartItemQuantity()} 
-          handleClick={toggleCart}
-        />
+      <header className={styles.header}>
+        <div className={styles.container}>
+          <Link to='/' className={styles.logo}>Project Logo</Link>
+          <NavigationBar 
+            length={getCartItemQuantity()} 
+            handleClick={toggleCart}
+          />
+        </div>
       </header>
-      {openCart && <Cart items={cartItems} handleClear={clearCart} />}
-      <Outlet context={addItemToCart} />
+      {openCart && <Cart items={cartItems} handleClear={clearCart} handleClose={closeCart} />}
+      <div className={styles.container}>
+        <Outlet context={addItemToCart} />
+      </div>
     </>
   )
 }

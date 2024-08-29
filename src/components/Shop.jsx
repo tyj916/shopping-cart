@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { useOutletContext } from "react-router-dom";
+import styles from './Shop.module.css';
 
 function Shop() {
   const [products, setProducts] = useState(null);
@@ -31,7 +32,7 @@ function Shop() {
   return (
     <div>
       <h1>Shop</h1>
-      <ul className="products">
+      <ul className={styles.products}>
         {
           loading ? <p>Loading...</p> :
           error ? <p>A network error was encountered</p> :
