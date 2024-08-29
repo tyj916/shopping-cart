@@ -36,11 +36,18 @@ function App() {
     setCartItems(newCartItems);
   }
 
+  function getCartItemQuantity() {
+    return cartItems.reduce(
+      (accumulator, current) => accumulator + current.quantity, 
+      0,
+    );
+  }
+
   return (
     <>
       <header>
         <div className='logo'>Project Logo</div>
-        <NavigationBar length={cartItems.length} />
+        <NavigationBar length={getCartItemQuantity()} />
       </header>
       <Cart items={cartItems} />
       <Outlet context={addItemToCart} />
