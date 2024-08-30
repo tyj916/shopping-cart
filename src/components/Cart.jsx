@@ -41,7 +41,7 @@ function Cart({ items, handleClear, handleClose }) {
       <h2 className={styles['total-price']}>Total: ${totalPrice}</h2>
       <div className={styles.buttons}>
         <button type='button' onClick={handleClear}>Clear</button>
-        <button type='button' onClick={() => alert('Checkout done.\nPS: This function is not within current learning scope.')}>Checkout</button>
+        <button type='button' onClick={() => alert('Checkout done.\nPS: This function is not done because this is not within current learning scope.')}>Checkout</button>
       </div>
     </div>
   )
