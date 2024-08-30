@@ -7,8 +7,8 @@ function Home() {
       <p>This project is built to practice the concepts I&apos;ve learned so far.</p>
       <p>Concepts used in this project:</p>
       <ul>
-        <li>React Testing</li>
         <li>React Router</li>
+        <li>React Testing</li>
         <li>PropTypes</li>
         <li>Data fetching and control with useEffect along with useEffect</li>
         <li>CSS Modules</li>
