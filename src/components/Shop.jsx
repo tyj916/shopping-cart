@@ -35,7 +35,7 @@ function Shop() {
       <ul className={styles.products}>
         {
           loading ? <p>Loading...</p> :
-          error ? <p>A network error was encountered</p> :
+          error ? <p>A network error was encountered. API fetch failed.</p> :
           products && products.length === 0 ? <p>No product.</p> :
           products && products.map(product => {
             return (

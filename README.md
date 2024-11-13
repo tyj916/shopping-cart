@@ -13,3 +13,8 @@ Features that can be added in the future:
 - more contents at home page
 - better design
 - etc...
+
+If the store page display "A network error was encountered", it is probably the API is not working properly.
+
+API used at this project:
+https://fakestoreapi.com/
