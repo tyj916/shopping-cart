@@ -7,12 +7,9 @@ https://shoppingcarttyj916.netlify.app/
 
 This project is built for learning purpose only. Thus, some minor details and functions will not be implemented.
 
-Things to have:
-- navigation bar
-- home page
-- shop page
-- shopping cart
+Features that can be added in the future:
 - checkout and pay
-- product card, with a add to card button and number control
-- product details, fetch from some API
-...
+- more feedback after clicking add to cart
+- more contents at home page
+- better design
+- etc...
